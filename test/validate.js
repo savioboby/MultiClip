@@ -9,10 +9,10 @@ let failCount = 0;
 
 function assert(condition, message) {
   if (condition) {
-    console.log(`  ✓ ${message}`);
+    console.log(`  [PASS] ${message}`);
     passCount++;
   } else {
-    console.error(`  ✗ FAIL: ${message}`);
+    console.error(`  [FAIL] ${message}`);
     failCount++;
   }
 }
@@ -143,5 +143,5 @@ console.log(`\nTest Summary: ${passCount} Passed, ${failCount} Failed.`);
 if (failCount > 0) {
   process.exit(1);
 } else {
-  console.log('✓ All extension verification checks passed successfully!\n');
+  console.log('All extension verification checks passed successfully!\n');
 }

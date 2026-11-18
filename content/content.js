@@ -120,7 +120,7 @@
         title: `Added clip #${count}`,
         subtitle: `"${snippet}"`,
         badge: `${count} total`,
-        footer: `Format: ${modeLabel} • Ready to paste (Ctrl+V)`
+        footer: `Format: ${modeLabel} - Ready to paste (Ctrl+V)`
       });
     }
   });
