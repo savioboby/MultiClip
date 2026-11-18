@@ -1,0 +1,20 @@
+{
+  "name": "multiclip",
+  "version": "1.0.0",
+  "description": "Cross-tab multi-selection copy accumulator Chrome extension",
+  "main": "background/service-worker.js",
+  "scripts": {
+    "build-icons": "node icons/generate-icons.js",
+    "test": "node test/validate.js",
+    "pack": "node scripts/pack.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "clipboard",
+    "multi-copy",
+    "productivity",
+    "manifest-v3"
+  ],
+  "author": "savioboby",
+  "license": "MIT"
+}

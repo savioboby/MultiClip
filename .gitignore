@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build & Zip Archives
+*.zip
+dist/
+
+# Logs
+*.log
+npm-debug.log*

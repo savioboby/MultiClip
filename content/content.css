@@ -1,0 +1,9 @@
+/* MultiClip Content Injected Styles */
+#multiclip-toast-host {
+  all: initial !important;
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  pointer-events: none !important;
+}

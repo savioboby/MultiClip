@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MultiClip</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="../icons/icon32.png" alt="MultiClip Logo" class="brand-icon">
+        <div class="brand-text">
+          <h1 class="brand-title">MultiClip</h1>
+          <span class="brand-badge">v1.0</span>
+        </div>
+      </div>
+      <div class="header-shortcut" title="Keyboard shortcut to toggle">
+        <kbd>Alt+Shift+M</kbd>
+      </div>
+    </header>
+
+    <!-- Master Toggle Card -->
+    <section class="card toggle-card">
+      <div class="toggle-info">
+        <div class="status-indicator" id="statusIndicator"></div>
+        <div>
+          <div class="toggle-title" id="statusTitle">MultiClip Active</div>
+          <div class="toggle-desc" id="statusDesc">Accumulating text on Ctrl+C</div>
+        </div>
+      </div>
+      <label class="switch" title="Toggle MultiClip ON or OFF">
+        <input type="checkbox" id="masterToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <!-- Delimiter / Paste Format Mode -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-title">Paste Delimiter</span>
+      </div>
+      <div class="delimiter-options" id="delimiterOptions">
+        <button type="button" class="delimiter-btn active" data-mode="newline" title="Paste each clip on a new line">
+          <span class="btn-icon">↵</span>
+          <span class="btn-label">New Line</span>
+        </button>
+        <button type="button" class="delimiter-btn" data-mode="paragraph" title="Paste clips separated by spaces as a paragraph">
+          <span class="btn-icon">␣</span>
+          <span class="btn-label">Paragraph</span>
+        </button>
+        <button type="button" class="delimiter-btn" data-mode="double_newline" title="Paste clips separated by an empty line">
+          <span class="btn-icon">↵↵</span>
+          <span class="btn-label">Double Line</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Queue Summary & Actions -->
+    <section class="section queue-section">
+      <div class="queue-header">
+        <div class="queue-meta">
+          <span class="queue-count" id="queueCount">0 clips</span>
+          <span class="queue-chars" id="queueChars">0 chars</span>
+        </div>
+        <div class="queue-actions">
+          <button type="button" class="action-btn copy-btn" id="copyAllBtn" title="Copy all accumulated clips to clipboard">
+            <svg class="action-icon" viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            <span id="copyAllBtnText">Copy All</span>
+          </button>
+          <button type="button" class="action-btn clear-btn" id="clearAllBtn" title="Clear all clips">
+            <svg class="action-icon" viewBox="0 0 24 24">
+              <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+            </svg>
+            <span>Clear</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Clips List -->
+      <div class="clips-container" id="clipsContainer">
+        <!-- Rendered dynamically via popup.js -->
+      </div>
+    </section>
+
+    <!-- Settings / Preferences Accordion -->
+    <footer class="footer">
+      <div class="preferences">
+        <label class="pref-item" title="Automatically clear accumulated clips after you paste in a tab">
+          <input type="checkbox" id="autoClearToggle">
+          <span class="pref-label">Auto-clear queue after paste</span>
+        </label>
+        <label class="pref-item" title="Display a notification toast when a clip is captured">
+          <input type="checkbox" id="toastToggle" checked>
+          <span class="pref-label">Show in-page toast notifications</span>
+        </label>
+      </div>
+      <div class="tip-bar">
+        <span>Tip: Works seamlessly across all open tabs!</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
